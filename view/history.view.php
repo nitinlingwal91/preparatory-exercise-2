@@ -28,13 +28,13 @@ if ($_SESSION['user_role'] != "Reader") {
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="reader.view.php">Home</a>
+                        <a class="nav-link" aria-current="page" href="reader">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="wishlist.view.php">wishlist</a>
+                        <a class="nav-link" href="wishlist">wishlist</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link " href="mybook.view.php">my books</a>
+                        <a class="nav-link " href="mybook">my books</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link active" href="">History</a>

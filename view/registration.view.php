@@ -25,7 +25,7 @@
                 Vitae auctor eu augudsf ut. Malesuada nunc vel risus commodo viverra. Praesent elementum facilisis leo vel.
             </p>
             <div class="form-field">
-                <a href="user_login.view.php"><input type="submit" class="account" value="Have an Account?"></a>
+                <a href="user_login"><input type="submit" class="account" value="Have an Account?"></a>
             </div>
         </div>
         

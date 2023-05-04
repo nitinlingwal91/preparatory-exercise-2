@@ -28,7 +28,7 @@
                   send link
                 </button>
               </div>
-              <span>Don't have an account? <a href="registration.view.php">Register</a></span>
+              <span>Don't have an account? <a href="registration">Register</a></span>
             </form>
           </div>
         </div>

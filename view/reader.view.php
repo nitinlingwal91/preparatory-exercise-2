@@ -32,13 +32,13 @@ if($_SESSION['user_role'] != "Reader") {
                         <a class="nav-link active" aria-current="page" href="#">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="wishlist.view.php">wishlist</a>
+                        <a class="nav-link" href="wishlist">wishlist</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link " href="mybook.view.php">my books</a>
+                        <a class="nav-link " href="mybook">my books</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link " href="history.view.php">History</a>
+                        <a class="nav-link " href="history">History</a>
                     </li>
 
                     <li class="d-flex align-items-center ms-lg-4">
@@ -72,7 +72,7 @@ if($_SESSION['user_role'] != "Reader") {
                 ?>
 
                 <div class="col-md-8 d-flex justify-content-end">
-                <button class="btn btn-primary  " onclick="location.href='../view/issuebookform.view.php';">Book Request</button>
+                <button class="btn btn-primary  " onclick="location.href='../view/issuebookform';">Book Request</button>
                 </div>
             </div>
         </div>

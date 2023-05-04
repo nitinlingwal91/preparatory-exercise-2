@@ -44,8 +44,8 @@
                 </div>
             </div>
 
-            <a href="recovery_mail.view.php" class="forgot-link float-right text-primary text-center mt-3 mb-0 ">Forgot password?</a>
-            <p class="text-muted text-center mt-3 mb-0">Don't have an account? <a href="../view/registration.view.php" class="text-primary ml-1">register</a></p>
+            <a href="recovery_mail" class="forgot-link float-right text-primary text-center mt-3 mb-0 ">Forgot password?</a>
+            <p class="text-muted text-center mt-3 mb-0">Don't have an account? <a href="../view/registration" class="text-primary ml-1">register</a></p>
 
         </div>
    

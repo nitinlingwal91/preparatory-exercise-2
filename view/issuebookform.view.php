@@ -15,7 +15,7 @@
         <div class="container-fluid">
             <a class="navbar-brand fw-bold ms-md-4" href="#">ADMIN PANEL</a>
             <div class="d-flex justify-content-center">
-                <a href="../view/reader.view.php"><button type="button" name="submit" class="btn btn-primary ">BACK TO LIST</button></a>
+                <a href="../view/reader"><button type="button" name="submit" class="btn btn-primary ">BACK TO LIST</button></a>
             </div>
         </div>
     </nav>

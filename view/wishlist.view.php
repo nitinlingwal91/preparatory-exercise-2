@@ -21,16 +21,16 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link " aria-current="page" href="../view/reader.view.php">Home</a>
+                        <a class="nav-link " aria-current="page" href="../view/reader">Home</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link active" href="#">wishlist</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link " href="../view/mybook.view.php">my books</a>
+                        <a class="nav-link " href="../view/mybook">my books</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link " href="../view/history.view.php">History</a>
+                        <a class="nav-link " href="../view/history">History</a>
                     </li>
 
                     <li class="d-flex align-items-center ms-lg-4">
@@ -43,7 +43,7 @@
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item dropdown me-lg-4">
                     <li class="text-align-center mt-2 align-items-center"><?php include "../controller/profile.con.php" ?></li>
-                    <li><a class="dropdown-item " href="../controller/auth/logout.php"><button class="btn btn-primary text-align-center d-flex me-6">Logout</button></a></li>
+                    <li><a class="dropdown-item " href="../controller/auth/logout"><button class="btn btn-primary text-align-center d-flex me-6">Logout</button></a></li>
                 </ul>
                 </li>
                 </ul>
@@ -101,7 +101,7 @@
                 $row = mysqli_fetch_assoc($result);
 
                 if ($row) {
-                    echo '<script>alert("Book already in wishlist!");window.location.href="../view/reader.view.php";</script>';
+                    echo '<script>alert("Book already in wishlist!");window.location.href="../view/reader";</script>';
                     exit();
                 }
 

@@ -104,20 +104,20 @@ include "../conn/connection.php";
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link " aria-current="page" href="admin.view.php">Home</a>
+            <a class="nav-link " aria-current="page" href="admin">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="booklist.view.php">Book List</a>
+            <a class="nav-link" href="booklist">Book List</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link " href="issuebook.view.php">Issue Book Management</a>
+            <a class="nav-link " href="issuebook">Issue Book Management</a>
           </li>
           <li class="nav-item">
             <a class="nav-link active" href="">Admin List</a>
           </li>
 
           <li class="nav-item">
-            <a class="nav-link " href="userdata.view.php">User List</a>
+            <a class="nav-link " href="userdata">User List</a>
           </li>
           <!-- <li class="d-flex align-items-center ms-lg-4">
             <form class="d-flex">

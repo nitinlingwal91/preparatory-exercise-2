@@ -53,20 +53,20 @@ include "../conn/connection.php";
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link " aria-current="page" href="../view/admin.view.php">Home</a>
+                        <a class="nav-link " aria-current="page" href="../view/admin">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" href="booklist.view.php">Book List</a>
+                        <a class="nav-link active" href="booklist">Book List</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link " href="issuebook.view.php">Issue Book Management</a>
+                        <a class="nav-link " href="issuebook">Issue Book Management</a>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" href="adminlist.view.php">Admin List</a>
+                        <a class="nav-link" href="adminlist">Admin List</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="userdata.view.php">User List</a>
+                        <a class="nav-link" href="userdata">User List</a>
                     </li>
                     
                 </ul>
@@ -92,7 +92,7 @@ include "../conn/connection.php";
             </form>
         </div>
         <div class="col-md-6 col-lg-8 d-flex justify-content-end align-items-center">
-            <a href="../view/bookadd.view.php"><button type="button" class="btn btn-primary mx-2 mt-2 mt-md-0" id="addBookBtn">Add Book</button></a>
+            <a href="../view/bookadd"><button type="button" class="btn btn-primary mx-2 mt-2 mt-md-0" id="addBookBtn">Add Book</button></a>
         </div>
     </div>
 

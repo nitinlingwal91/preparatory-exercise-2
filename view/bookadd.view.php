@@ -21,7 +21,7 @@ if($_SESSION['user_role'] != "Admin" && $_SESSION['user_role'] != "SuperAdmin" )
         <div class="container-fluid">
             <a class="navbar-brand fw-bold ms-md-4" href="#">ADMIN PANEL</a>
             <div class="d-flex justify-content-center">
-                <a href="../view/booklist.view.php"><button type="button" name="submit" class="btn btn-primary ">BACK TO LIST</button></a>
+                <a href="../view/booklist"><button type="button" name="submit" class="btn btn-primary ">BACK TO LIST</button></a>
             </div>
         </div>
     </nav>

@@ -19,7 +19,7 @@
 				<a class="navbar-brand" href="#">E-LIBRARY</a>
 			</div>
 			<div class="d-flex justify-content-center">
-				<a href="../view/mybook.view.php"><button type="submit" name="submit" class="btn btn-primary ">BACK TO LIST</button></a>
+				<a href="../view/mybook"><button type="submit" name="submit" class="btn btn-primary ">BACK TO LIST</button></a>
 			</div>
 
 		</div>

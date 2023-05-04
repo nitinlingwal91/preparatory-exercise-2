@@ -33,17 +33,17 @@ if($_SESSION['user_role'] != "Admin" && $_SESSION['user_role'] != "SuperAdmin" )
                         <a class="nav-link active" aria-current="page" href="#">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="booklist.view.php">Book List</a>
+                        <a class="nav-link" href="booklist">Book List</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link " href="issuebook.view.php">Issue Book Management</a>
+                        <a class="nav-link " href="issuebook">Issue Book Management</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="adminlist.view.php">Admin List</a>
+                        <a class="nav-link" href="adminlist">Admin List</a>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" href="userdata.view.php">User List</a>
+                        <a class="nav-link" href="userdata">User List</a>
                     </li>
                 </ul>
                 <ul class="navbar-nav me-4">
@@ -67,7 +67,7 @@ if($_SESSION['user_role'] != "Admin" && $_SESSION['user_role'] != "SuperAdmin" )
 
                 $book_count = $result['count'];
                 ?>
-                <a href="booklist.view.php">
+                <a href="booklist">
                     <div class="card text-white bg-primary mb-3 w-75 h-100 mx-4">
                         <div class="card-header text-center"><i class="fa fa-sharp fa-light fa-book fa-flip fa-xl "></i>
                             Book Count</div>
@@ -85,7 +85,7 @@ if($_SESSION['user_role'] != "Admin" && $_SESSION['user_role'] != "SuperAdmin" )
 
                 $user_count = $result['count'];
                 ?>
-                <a href="userdata.view.php">
+                <a href="userdata">
                     <div class="card text-white bg-success mb-3 w-75 h-100 mx-4">
                         <div class="card-header text-center"><i class="fas fa-users"></i> User Count</div>
                         <div class="card-body">
