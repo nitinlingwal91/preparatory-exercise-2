@@ -27,7 +27,7 @@ if (isset($_POST['reader_submit'])) {
                 $_SESSION['user_role'] = 'Reader';
                 $_SESSION['user_email'] = $user_email;
                 $_SESSION['user_password'] = $upass;
-                echo '<script>alert("Login successfull"); window.location.href="../../view/reader.view.php";</script>';
+                echo '<script>alert("Login successfull"); window.location.href="../../view/reader";</script>';
                 
                 exit();
             }elseif (strcasecmp($user_role, "SuperAdmin") == 0){
@@ -36,7 +36,7 @@ if (isset($_POST['reader_submit'])) {
                 $_SESSION['user_password'] = $upass;
                 echo '<script>alert"Login successfull";</script>';
                 
-                echo '<script>window.location="../../view/admin.view.php";</script>';
+                echo '<script>window.location="../../view/admin";</script>';
                 exit();
 
             } else if (strcasecmp($user_role, "Admin") == 0) {
@@ -45,16 +45,16 @@ if (isset($_POST['reader_submit'])) {
                 $_SESSION['user_password'] = $upass;
                 echo '<script>alert"Login successfull";</script>';
                 
-                echo '<script>window.location="../../view/admin.view.php";</script>';
+                echo '<script>window.location="../../view/admin";</script>';
                 exit();
             } else {
                 echo '<script>alert"Invalid email or password or email not verified";</script>';
-                echo '<script>window.location="../../view/user_login.view.php";</script>';
+                echo '<script>window.location="../../view/user_login";</script>';
                 exit();
             }
         } else {
             echo '<script>alert"Invalid email or password or email not verified"; </script>';
-            echo '<script>window.location="../../view/user_login.view.php";</script>';
+            echo '<script>window.location="../../view/user_login";</script>';
             exit();
         }
     }

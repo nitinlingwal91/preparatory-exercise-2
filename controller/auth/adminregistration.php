@@ -24,12 +24,12 @@ if (isset($_POST['register_user'])) {
         if ($row['status'] == 'verified') {
             echo '<script>alert("Email id already exists");</script>';
 
-            header("Location: ../../view/userdata.view.php");
+            header("Location: ../../view/userdata");
             exit();
         } elseif ($row['status'] == 'unverified') {
 
             echo '<script>alert("Email id already exists, but it has not been verified yet. Please check your email for the verification link='. $verification_link.'");</script>';
-            header("Location: ../../view/userdata.view.php");
+            header("Location: ../../view/userdata");
             exit();
         }
         
@@ -46,18 +46,18 @@ if (isset($_POST['register_user'])) {
 
             if ($insert_query_run) {
 
-                $verification_link = '<a href="http://localhost/e-library/book_library/view/userdata.view.php?email_token=' . $email_token . '&token_time=' . $token_generated_time . '">verify</a>';                
+                $verification_link = '<a href="http://localhost/book_library/view/userdata.view.php?email_token=' . $email_token . '&token_time=' . $token_generated_time . '">verify</a>';                
                 $mail = new PHPMailer(true);
                 try {
                     // $mail->SMTPDebug = SMTP::DEBUG_SERVER;                      
                     $mail->isSMTP();
                     $mail->Host       = 'smtp.gmail.com';
                     $mail->SMTPAuth   = true;
-                    $mail->Username   = 'nitinlingwal08@gmail.com';
-                    $mail->Password   = 'qpgafvwtcprrmxfd';
+                    $mail->Username   = 'm8824970@gmail.com';
+                    $mail->Password   = 'wvyfyslsihahdfdn';
                     $mail->SMTPSecure = "tls";
                     $mail->Port       = 587;
-                    $mail->setFrom('nitinlingwal08@gmail.com', 'e-library');
+                    $mail->setFrom('m8824970@gmail.com', 'e-library');
                     $mail->addAddress($user_email);
                     $mail->isHTML(true);
                     $mail->Subject = 'Verify Your Email';
@@ -80,6 +80,7 @@ if (isset($_POST['register_user'])) {
         }
     }
 }
+
 
 if (isset($_GET['email_token'])) {
     $email_token = mysqli_real_escape_string($con, $_GET['email_token']);

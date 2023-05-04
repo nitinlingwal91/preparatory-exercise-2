@@ -46,7 +46,7 @@ if (isset($_POST['register'])) {
 
             if ($insert_query_run) {
 
-                $verification_link = '<a href="http://localhost/e-library/book_library/view/registration.view.php?email_token=' . $email_token . '&token_time=' . $token_generated_time . '">verify</a>';
+                $verification_link = '<a href="http://localhost/book_library/view/registration.view.php?email_token=' . $email_token . '&token_time=' . $token_generated_time . '">verify</a>';
 
                 $mail = new PHPMailer(true);
                 try {
@@ -55,11 +55,11 @@ if (isset($_POST['register'])) {
                     $mail->isSMTP();
                     $mail->Host       = 'smtp.gmail.com';
                     $mail->SMTPAuth   = true;
-                    $mail->Username   = 'nitinlingwal08@gmail.com';
-                    $mail->Password   = 'qpgafvwtcprrmxfd';
+                    $mail->Username   = 'm8824970@gmail.com';
+                    $mail->Password   = 'wvyfyslsihahdfdn';
                     $mail->SMTPSecure = "tls";
                     $mail->Port       = 587;
-                    $mail->setFrom('nitinlingwal08@gmail.com', 'e-library');
+                    $mail->setFrom('m8824970@gmail.com', 'e-library');
                     $mail->addAddress($user_email);
                     $mail->isHTML(true);
                     $mail->Subject = 'Verify Your Email';
