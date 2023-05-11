@@ -71,9 +71,6 @@ if($_SESSION['user_role'] != "Reader") {
                 $row = mysqli_fetch_assoc($sql_run);
                 ?>
 
-                <div class="col-md-8 d-flex justify-content-end">
-                <button class="btn btn-primary  " onclick="location.href='../view/issuebookform';">Book Request</button>
-                </div>
             </div>
         </div>
         <form action="" method="GET">
@@ -121,6 +118,10 @@ if($_SESSION['user_role'] != "Reader") {
 
         ?>
     </ul>
+    <br>
+    <div class="row col-lg-12 col-md-8">
+    <?php include "../view/footer.php"?>
+    </div>
 
     
 </body>

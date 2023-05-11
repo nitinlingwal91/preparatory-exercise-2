@@ -28,7 +28,22 @@ if (mysqli_num_rows($query_run) > 0) {
     foreach ($query_run as $row) {
 ?>
         <tr>
-            <td><img src="<?= $row['img_url'] ?>" height="100px"></td>
+            <td>
+                <button type="button" class="" data-toggle="modal" data-target="#exampleModal<?= $row['id'] ?>">
+                    <img class="table-image" src="<?= $row['img_url'] ?>" height="100px">
+                </button>
+
+                <div class="modal fade" id="exampleModal<?= $row['id'] ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered w-25" role="document">
+                        <div class="modal-content">
+                            <div class="modal-body">
+                                <img class="modal-image" src="<?= $row['img_url'] ?>">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </td>
+
             <td><?php echo $row['book_id']; ?></td>
             <td><?php echo $row['author_name']; ?></td>
             <td><?php echo $row['book_name']; ?></td>
@@ -45,7 +60,18 @@ if (mysqli_num_rows($query_run) > 0) {
                 ?>
             </td>
             <td><?php echo $row['img_url']; ?></td>
-            <td><?php echo $row['copies_available']; ?></td>
+            <td>
+                <?php
+                $copies_available = $row['copies_available'];
+                if ($copies_available == 0) {
+                    echo 'Book Not Available';
+                } elseif ($copies_available == 1) {
+                    echo 'Book Available';
+                } else {
+                    echo 'Copies Available: ' . $copies_available;
+                }
+                ?>
+            </td>
             <td><a href="../view/bookedit.view.php?id=<?php echo $row['id'] ?>"><button type="submit_edit" class="btn btn-success">EDIT</button></a></td>
             <td><button type="button" class="btn btn-danger deletebtn" data-id="<?php echo $row['book_id']; ?>">DELETE</button></td>
         </tr>

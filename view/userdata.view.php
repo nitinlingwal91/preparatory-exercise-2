@@ -1,8 +1,8 @@
 <?php include "../conn/session.php" ?>
-<?php 
-if($_SESSION['user_role'] != "Admin" && $_SESSION['user_role'] != "SuperAdmin" )  {
-    header('Location: ../view/403.php');
-    exit();
+<?php
+if ($_SESSION['user_role'] != "Admin" && $_SESSION['user_role'] != "SuperAdmin") {
+  header('Location: ../view/403.php');
+  exit();
 }
 ?>
 <?php
@@ -77,14 +77,14 @@ include "../conn/connection.php";
         </ul>
         <ul class="navbar-nav ms-auto">
           <li class="nav-item dropdown me-lg-4">
-          <li class="text-align-center mt-2 align-items-center"><?php include "../controller/profile.con.php"?></li>
+          <li class="text-align-center mt-2 align-items-center"><?php include "../controller/profile.con.php" ?></li>
           <li><a class="dropdown-item " href="../controller/auth/logout.php"><button class="btn btn-primary text-align-center d-flex me-6">Logout</button></a></li>
           </li>
         </ul>
       </div>
     </div>
   </nav>
-  
+
 
   <div class="row mt-3 mx-4">
     <div class="col-md-6 col-lg-4">
@@ -100,7 +100,7 @@ include "../conn/connection.php";
     <div class="col-md-6 col-lg-8 d-flex justify-content-end align-items-center">
 
       <!-- Button to trigger modal -->
-      <button type="button" class="btn btn-primary mt-2 " data-bs-toggle="modal" data-bs-target="#registrationModal">
+      <button type="button" class="btn btn-primary mt-2" id="register_user" name="register_user" data-bs-toggle="modal" data-bs-target="#registrationModal">
         Register User
       </button>
 
@@ -224,7 +224,10 @@ include "../conn/connection.php";
   echo '</ul>';
   echo '</nav>';
   ?>
-  <?php include "footer.php"?>
+  <br>
+  <div class="row col-lg-12 col-md-8">
+    <?php include "../view/footer.php" ?>
+  </div>
 
 
 

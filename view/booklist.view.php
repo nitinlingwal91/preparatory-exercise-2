@@ -124,7 +124,7 @@ include "../conn/connection.php";
                     <th>Book Name</th>
                     <th class="w-25">Description/About</th>
                     <th>image path</th>
-                    <th>Book Copies</th>
+                    <th>Book Status</th>
                     <th>EDIT</th>
                     <th>DELETE</th>
                 </tr>
@@ -165,13 +165,18 @@ include "../conn/connection.php";
 
     echo '</ul>';
     echo '</nav>';
-    ?>
+    ?> 
+    <br>
+    <div class="row col-lg-12 col-md-8">
+    <?php include "../view/footer.php"?>
+    </div>
 
 
 
 
 
     <script src="../public/js/delete.js"></script>
+    
 </body>
 
 </html>

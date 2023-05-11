@@ -49,11 +49,13 @@ if (isset($_POST['reader_submit'])) {
                 exit();
             } else {
                 echo '<script>alert"Invalid email or password or email not verified";</script>';
+
                 echo '<script>window.location="../../view/user_login";</script>';
                 exit();
             }
         } else {
             echo '<script>alert"Invalid email or password or email not verified"; </script>';
+            
             echo '<script>window.location="../../view/user_login";</script>';
             exit();
         }

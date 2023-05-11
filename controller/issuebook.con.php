@@ -12,11 +12,11 @@ if (isset($_GET['sort_alphabet'])) {
         $sort_option = "DESC";
     }
 }
-$sql = "SELECT issue_book.book_id, issue_book.user_name, issue_book.user_email, issue_book.book_name, issue_book.issue_date, issue_book.return_date, issue_book.status, create_book.copies_available, create_book.img_url 
+$sql = "SELECT issue_book.book_id,  issue_book.user_email, issue_book.book_name, issue_book.issue_date, issue_book.return_date, issue_book.status, create_book.copies_available, create_book.img_url 
         FROM issue_book 
         JOIN create_book 
         ON issue_book.book_id = create_book.book_id
-        WHERE issue_book.book_name LIKE '%$search%' OR issue_book.book_id LIKE '%$search%' OR issue_book.user_name LIKE '%$search%'";
+        WHERE issue_book.book_name LIKE '%$search%' OR issue_book.book_id LIKE '%$search%' LIKE '%$search%'";
 if (!empty($sort_option)) {
     $sql .= " ORDER BY issue_book.book_name $sort_option";
 }
@@ -45,7 +45,6 @@ if (mysqli_num_rows($query_run) > 0) {
         <tr>
             <td><img src="<?= $row['img_url'] ?>" height="100px"></td>
             <td><?php echo $row['book_id']; ?></td>
-            <td><?php echo $row['user_name']; ?></td>
             <td><?php echo $row['user_email']; ?></td>
             <td><?php echo $row['book_name']; ?></td>
             <td><?php echo $row['issue_date']; ?></td>
@@ -53,7 +52,7 @@ if (mysqli_num_rows($query_run) > 0) {
             <td><?php echo $row['status']; ?></td>
 
             <td>
-                <form action="../controller/bookrequest.con.php" method="POST">
+                <form action="../controller/reader.con.php" method="POST">
                     <input type="hidden" name="book_request_id" value="<?php echo $row['book_id']; ?>">
                     <select name="status" class="btn btn-primary" onchange="this.form.submit()">
                         <?php

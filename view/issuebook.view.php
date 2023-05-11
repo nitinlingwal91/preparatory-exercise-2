@@ -1,6 +1,6 @@
 <?php include "../conn/session.php" ?>
-<?php 
-if($_SESSION['user_role'] != "Admin" && $_SESSION['user_role'] != "SuperAdmin" )  {
+<?php
+if ($_SESSION['user_role'] != "Admin" && $_SESSION['user_role'] != "SuperAdmin") {
     header('Location: ../view/403.php');
     exit();
 }
@@ -72,7 +72,7 @@ include "../conn/connection.php";
                 </ul>
                 <ul class="navbar-nav me-4">
                     <li class="nav-item dropdown me-4 ">
-                    <li class="text-align-center mt-2 align-items-center"><?php include "../controller/profile.con.php"?></li> 
+                    <li class="text-align-center mt-2 align-items-center"><?php include "../controller/profile.con.php" ?></li>
                     <li><a class="dropdown-item " href="../controller/auth/logout.php"><button class="btn btn-primary text-align-center d-flex me-6">Logout</button></a></li>
                     </li>
                 </ul>
@@ -80,7 +80,7 @@ include "../conn/connection.php";
         </div>
     </nav>
 
-    
+
     <div class="row mt-3 mx-4">
         <div class="col-md-6 col-lg-4">
             <form action="" method="get">
@@ -117,7 +117,6 @@ include "../conn/connection.php";
                     <tr>
                         <th>Book Image</th>
                         <th>Book Id</th>
-                        <th>Reader Name</th>
                         <th>Email</th>
                         <th>Book Name</th>
                         <th>issue Date</th>
@@ -162,13 +161,16 @@ include "../conn/connection.php";
         echo '</ul>';
         echo '</nav>';
         ?>
-    </div>    
-
-<?php include "footer.php"?>
+    </div>
 
 
+    <br>
+    <div class="row col-lg-12 col-md-8">
+        <?php include "../view/footer.php" ?>
+    </div>
+
+</body>
 
 <script src="../public/js/delete.js"></script>
-</body>
 
 </html>

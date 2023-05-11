@@ -166,13 +166,23 @@
                     <div class="card">
                         <img src="<?php echo $row['img_url']; ?>" class="card-img-top" alt="image" style="max-width: 100%; max-height: 300px;">
                         <div class="card-body bg-light book-card" style="height: 200px;">
-                            <form class="mb-2" method="post">
-                                <input type="hidden" name="book_id" value="<?php echo $row['book_id']; ?>" />
-                                <button type="submit" name="remove_wishlist" class="btn btn-danger btn-block">Remove from Wishlist</button>
-                            </form>
+                            <div class="row">
+                                <div class="col">
+                                    <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="POST">
+                                        <input type="hidden" name="id" value="<?php echo $row['id']; ?>">
+                                        <button type="submit" class="btn btn-primary btn-block btn-sm" name="book_request" id="book_request_id">Book Request</button>
+                                    </form>
+                                </div>
+                                <div class="col">
+                                    <form class="mb-2" method="post">
+                                        <input type="hidden" name="book_id" value="<?php echo $row['book_id']; ?>" />
+                                        <button type="submit" name="remove_wishlist" class="btn btn-danger btn-block btn-sm">wishlist Remove</button>
+                                    </form>
+                                </div>
+                            </div>
+
                             <h5 class="card-title text-center"><?php echo $row['book_name']; ?></h5>
                             <p class="card-text text-center"><?php echo $row['author_name']; ?></p>
-                            <p class="card-text text-center">Book Id--<?php echo $row['book_id']; ?></p>
                         </div>
                     </div>
                 </div>
@@ -181,6 +191,49 @@
             ?>
         </div>
     </div>
+
+    <?php
+    include "../conn/connection.php";
+
+    if (isset($_POST['book_request'])) {
+        $id = $_POST['id'];
+
+
+        $sql_book = "SELECT book_id, book_name FROM create_book WHERE id='$id'";
+        $result_book = mysqli_query($con, $sql_book);
+        $row_book = mysqli_fetch_assoc($result_book);
+        $book_id = $row_book['book_id'];
+        $book_name = $row_book['book_name'];
+
+        $user_email = $_SESSION['user_email'];
+
+        $return_date = date('Y-m-d', strtotime('+3 days'));
+
+        $sql_check = "SELECT * FROM issue_book WHERE user_email='$user_email' AND (status='pending' OR status='approved')";
+        $result_check = mysqli_query($con, $sql_check);
+        if (mysqli_num_rows($result_check) > 0) {
+            echo '<script>alert("User already has a pending or approved book request.");window.location.href="../view/reader.view.php";</script>';
+            exit();
+        }
+
+        $sql_check = "SELECT * FROM issue_book WHERE book_id='$book_id' AND status='approved'";
+        $result_check = mysqli_query($con, $sql_check);
+        if (mysqli_num_rows($result_check) > 0) {
+            echo '<script>alert("This book has already been issued.");window.location.href="../view/reader.view.php";</script>';
+            exit();
+        }
+
+        $status = 'pending';
+        $sql = "INSERT INTO issue_book (book_id, book_name, user_email, return_date, status) VALUES ('$book_id', '$book_name', '$user_email', '$return_date', '$status' )";
+        if (mysqli_query($con, $sql)) {
+            echo '<script>alert("Book request sent.");window.location.href="../view/reader";</script>';
+            exit();
+        } else {
+            echo "Error: " . $sql . "<br>" . mysqli_error($con);
+        }
+    }
+    ?>
+
 
     <?php
     if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['remove_wishlist'])) {
@@ -217,7 +270,7 @@
         ?>
     </ul>
 
-    <?php include "footer.php"?>
+    <?php include "footer.php" ?>
 
 
 

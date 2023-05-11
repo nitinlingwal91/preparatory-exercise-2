@@ -111,6 +111,7 @@ if (isset($_GET['email_token'])) {
 
             if ($status_row['status'] == 'verified') {
                 echo '<script>alert("your email is verified"); window.location.href="../view/userdata.view.php";</script>';
+                
                 exit();
 
             } else {
